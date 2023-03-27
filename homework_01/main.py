@@ -48,5 +48,4 @@ clear
     elif filter == EVEN:
         return [number for number in list_numbers if number % 2 == 0]
     elif filter == PRIME:
-        testlist = [number for number in list_numbers if is_prime(number)]
-        return testlist
+        return [number for number in list_numbers if is_prime(number)]
