@@ -21,15 +21,14 @@ PRIME = "prime"
 
 
 def is_prime(num):
-    i, prime = 2, True
-    while i <= math.sqrt(num) and prime is True:
-        if num % i == 0:
-            prime = False
-        i += 1
-    if prime:
-        return True
-    else:
-        return False
+    if num == 1:
+        return num == 2
+    if num % 2 == 0:
+        return num == 2
+    d = 3
+    while d * d <= num and num % d != 0:
+        d += 2
+    return d * d > num
 
 
 def filter_numbers(list_numbers,filter):
