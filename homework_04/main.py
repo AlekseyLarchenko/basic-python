@@ -13,44 +13,45 @@
 - закрытие соединения с БД
 """
 import asyncio
-from sqlalchemy import create_engine
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import sessionmaker
 from jsonplaceholder_requests import get_user_data, get_posts_data
-from models import Base, User, Post
-
-PG_CONN_URI = "postgresql+asyncpg://username:passwd@0.0.0.0:5433/blog"
-
-Engine = create_engine(PG_CONN_URI)
-Session = sessionmaker(
-    Engine,
-    expire_on_commit=False,
-    class_=AsyncSession,
-)
+from models import Base, Session, User, Post, engine
 
 
-async def add_users_data():
-    session = Session()
-    users_data = await get_user_data()
-    users = [User(name=user['name'], username=user['username'], email=user['email']) for user in users_data]
-    session.add_all(users)
-    session.commit()
-    session.close()
+async def create_tables():
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
 
 
-async def add_posts_data():
-    session = Session()
-    posts_data = await get_posts_data()
-    posts = [Post(user_id=post['userId'], title=post['title'], body=post['body']) for post in posts_data]
-    session.add_all(posts)
-    session.commit()
-    session.close()
+async def add_users(users_data):
+    async with Session() as session:
+        for user_data in users_data:
+            user = User(name=user_data['name'], username=user_data['username'], email=user_data['email'])
+            session.add(user)
+
+
+
+async def add_posts(posts_data):
+    async with Session() as session:
+        for post_data in posts_data:
+            post = Post(user_id=post_data['userId'], title=post_data['title'], body=post_data['body'])
+            session.add(post)
 
 
 async def async_main():
-    Base.metadata.create_all(Engine)
-    await asyncio.gather(add_users_data(), add_posts_data())
-    Engine.dispose()
+    await create_tables()
+
+
+    users_data, posts_data = await asyncio.gather(
+        get_user_data(),
+        get_posts_data(),
+    )
+
+    await asyncio.gather(
+        add_users(users_data),
+        add_posts(posts_data),
+    )
+
+    await engine.dispose()
 
 
 def main():

@@ -21,4 +21,4 @@ async def get_posts_data():
 async def get_user_data():
     async with ClientSession() as session:
         users_data = await fetch_json(session, USERS_DATA_URL)
-        print(users_data)
+        return users_data
