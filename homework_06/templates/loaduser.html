@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}load users{% endblock %}
+{% block body %} <p class="mx-3 h4">Load users:</p>
+    <div>
+        <form method="post">
+            <input class="mx-3 btn btn-primary" type="submit" value="loading">
+        </form>
+    </div>
+    <div class="mx-3 mt-2">
+        <a href="{{ url_for('users_app.home') }}">
+            Back to home
+        </a>
+    </div>
+{% endblock %}
