@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+    Club info
+{% endblock %}
+{% block body %}
+    <h1>{{ team.name }}</h1>
+    <p>Founded: {{ team.founded }}</p>
+    <p>Shortname ground: {{ team.shortname }}</p>
+    <p>Official Website: {{ team.website }}</p>
+    <p>League: {{ team.league }}</p>
+{% endblock %}

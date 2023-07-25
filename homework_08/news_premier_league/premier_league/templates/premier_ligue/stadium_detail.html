@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+    Stadium Detail
+{% endblock %}
+{% block body %}
+    <h1>{{ stadium.name }}</h1>
+    <p>Location: {{ stadium.location }}</p>
+    <p>Broke ground: {{ stadium.brokeground }}</p>
+    <p>Capacity: {{ stadium.capacity }}</p>
+    <p>Architect: {{ stadium.architect }}</p>
+{% endblock %}

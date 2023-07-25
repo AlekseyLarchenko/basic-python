@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+    News
+{% endblock %}
+{% block body %}
+    <h1>News List</h1>
+    <ul>
+        {% for nw in news %}
+            <li><a href="{% url 'news_detail' stadium.pk %}">{{ nw.shortname }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

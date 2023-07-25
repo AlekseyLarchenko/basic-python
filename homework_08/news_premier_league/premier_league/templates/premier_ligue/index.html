@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Premier Ligue Home
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Welcome to the Premier Ligue</h1>
+        <ul>
+            <li><a href="{% url 'premier_league:team-list' %}">Clubs</a></li>
+            <li><a href="{% url 'premier_league:stadium-list' %}">Stadiums</a></li>
+            <li><a href="{% url 'premier_league:news-list' %}">News</a></li>
+        </ul>
+    </div>
+{% endblock %}
