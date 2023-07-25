@@ -6,7 +6,7 @@
     <h1>News List</h1>
     <ul>
         {% for nw in news %}
-            <li><a href="{% url 'news_detail' stadium.pk %}">{{ nw.shortname }}</a></li>
+            <li><a href="{% url 'premier_league:news_detail' stadium.pk %}">{{ nw.shortname }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

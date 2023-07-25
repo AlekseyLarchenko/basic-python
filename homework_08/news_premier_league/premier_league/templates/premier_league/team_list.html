@@ -6,7 +6,7 @@
     <h1>Clubs List</h1>
     <ul>
         {% for team in teams %}
-            <li><a href="{% url 'team_detail' team.pk %}">{{ team.shortname }}</a></li>
+            <li><a href="{% url 'premier_league:team_detail' team.pk %}">{{ team.shortname }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

@@ -6,7 +6,7 @@
     <h1>Stadium List</h1>
     <ul>
         {% for stadium in stadiums %}
-            <li><a href="{% url 'stadium_detail' stadium.pk %}">{{ stadium.name }}</a></li>
+            <li><a href="{% url 'premier_league:stadium_detail' stadium.pk %}">{{ stadium.name }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
