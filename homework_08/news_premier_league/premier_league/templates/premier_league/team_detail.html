@@ -8,4 +8,9 @@
     <p>Shortname ground: {{ team.shortname }}</p>
     <p>Official Website: {{ team.website }}</p>
     <p>League: {{ team.league }}</p>
+    <ul>
+        <li>
+            <a href="{% url 'premier_league:index' %}">Back to Home</a>
+        </li>
+    </ul>
 {% endblock %}

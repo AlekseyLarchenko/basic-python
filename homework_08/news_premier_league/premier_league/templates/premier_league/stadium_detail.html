@@ -8,4 +8,9 @@
     <p>Broke ground: {{ stadium.brokeground }}</p>
     <p>Capacity: {{ stadium.capacity }}</p>
     <p>Architect: {{ stadium.architect }}</p>
+    <ul>
+        <li>
+            <a href="{% url 'premier_league:index' %}">Back to Home</a>
+        </li>
+    </ul>
 {% endblock %}

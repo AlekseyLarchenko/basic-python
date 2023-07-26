@@ -9,4 +9,9 @@
             <li><a href="{% url 'premier_league:news_detail' elem.pk %}">{{ elem.shortname }}</a></li>
         {% endfor %}
     </ul>
+     <ul>
+      <li>
+        <a href="{% url 'premier_league:index' %}">Back to Home</a>
+      </li>
+    </ul>
 {% endblock %}
