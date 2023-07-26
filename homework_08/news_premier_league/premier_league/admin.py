@@ -16,6 +16,10 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
+    class Meta:
+        verbose_name = "Club"
+        verbose_name_plural = "Clubs"
+
     list_display = "id", "name", "shortname", "stadium", "website", "league"
     list_display_links = "id", "name", "shortname"
 

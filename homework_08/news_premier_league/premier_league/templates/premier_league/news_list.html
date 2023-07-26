@@ -3,10 +3,10 @@
     News
 {% endblock %}
 {% block body %}
-    <h1>News List</h1>
+    <h1>Hot news:</h1>
     <ul>
-        {% for nw in news %}
-            <li><a href="{% url 'premier_league:news_detail' stadium.pk %}">{{ nw.shortname }}</a></li>
+        {% for elem in news_list %}
+            <li><a href="{% url 'premier_league:news_detail' elem.pk %}">{{ elem.shortname }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

@@ -14,7 +14,7 @@ class Stadium(models.Model):
     def __str__(self):
         return self.name
 
-1
+
 class Team(models.Model):
     name = models.CharField(max_length=50, unique=True)
     nicknames = models.CharField(max_length=50, null=True)
