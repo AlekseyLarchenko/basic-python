@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+    Clubs
+{% endblock %}
+{% block body %}
+    <h1>Clubs List</h1>
+    <ul>
+        {% for team in teams %}
+            <li><a href="{% url 'premier_league:team_detail' team.pk %}">{{ team.shortname }}</a></li>
+        {% endfor %}
+    </ul>
+    <ul>
+        <li>
+            <a href="{% url 'premier_league:index' %}">Back to Home</a>
+        </li>
+    </ul>
+{% endblock %}
