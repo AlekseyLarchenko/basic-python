@@ -19,11 +19,11 @@ jobs:
         with:
           python-version: 3.10.12
 
-      - name: Install pipenv and django
-        run: pip install pipenv && pipenv install django
+      - name: Install pipenv
+        run: pip install pipenv
 
-      - name: Verify Django
-        run: pipenv run pip show django
+      - name: Cd homework_10 and update
+        run: cd homework_10 && pipenv update
 
       - name: Run Django Tests
         run: |
