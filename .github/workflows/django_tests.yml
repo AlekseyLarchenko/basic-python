@@ -29,4 +29,3 @@ jobs:
         run: |
           cd homework_10/news_premier_league/
           pipenv run python manage.py test
-
