@@ -25,3 +25,5 @@ jobs:
       - name: Verify Django
         run: pipenv run pip show django
 
+      - name: Run Django Tests
+        run: pipenv run python homework_10/news_premier_league/manage.py test
