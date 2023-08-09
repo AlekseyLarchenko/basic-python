@@ -22,8 +22,5 @@ jobs:
       - name: Install pipenv
         run: pip install pipenv
 
-      - name: Cd homework_10 and update
-        run: cd homework_10 && pipenv update && cd news_premier_league
-
-      - name: Run Django Tests
-        run: python manage.py test
+      - name: Cd homework_10 and update and Run Django Tests
+        run: cd homework_10 && pipenv update && cd news_premier_league && python manage.py test
