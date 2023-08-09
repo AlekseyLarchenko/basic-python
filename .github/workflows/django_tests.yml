@@ -28,4 +28,5 @@ jobs:
       - name: Run Django Tests
         run: |
           cd homework_10/news_premier_league/
-          pipenv run python manage.py test
+          pipenv shell
+          python manage.py test
