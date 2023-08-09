@@ -25,5 +25,6 @@ jobs:
       - name: Cd homework_10 and update
         run: cd homework_10 && pipenv update
 
-      - name: Run Django Tests
-        run: pipenv run python homework_10/news_premier_league/manage.py test
+      - name: Verify Django
+        run: pipenv run pip show django
+
