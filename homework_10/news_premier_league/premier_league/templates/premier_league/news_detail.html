@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+    News
+{% endblock %}
+{% block body %}
+    <h1>{{ news.shortname }}</h1>
+    <p>Added: {{ news.created_at }}</p>
+    <p>Description: {{ news.description }}</p>
+    <p>Author: {{ news.author }}</p>
+    <ul>
+        <li>
+            <a href="{% url 'premier_league:index' %}">Back to Home</a>
+        </li>
+    </ul>
+{% endblock %}
